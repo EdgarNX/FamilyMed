@@ -1,0 +1,15 @@
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\FamilyMed.exe.config
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\FamilyMed.exe
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\FamilyMed.pdb
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\FireSharp.dll
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\FireSharp.Serialization.JsonNet.dll
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\Newtonsoft.Json.dll
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\RestSharp.dll
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\Newtonsoft.Json.xml
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\bin\Debug\RestSharp.xml
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.csprojResolveAssemblyReference.cache
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.Form1.resources
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.Properties.Resources.resources
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.csproj.GenerateResource.Cache
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.exe
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.pdb
