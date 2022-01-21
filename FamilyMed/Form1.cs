@@ -32,12 +32,15 @@ namespace FamilyMed
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            client = new FireSharp.FirebaseClient(config);
+            //client = new FireSharp.FirebaseClient(config);
 
-            if(client!=null)
-            {
-                MessageBox.Show("Connection is established!");
-            }
+            //if(client!=null)
+            //{
+            //    MessageBox.Show("Connection is established!");
+            //}
+
+
+
         }
     }
 }

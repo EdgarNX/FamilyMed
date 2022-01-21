@@ -13,3 +13,4 @@ c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Deb
 c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.csproj.GenerateResource.Cache
 c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.exe
 c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.pdb
+c:\users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.Form2.resources
