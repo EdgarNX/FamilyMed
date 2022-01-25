@@ -69,7 +69,7 @@
             this.labelNrPacienti = new System.Windows.Forms.Label();
             this.labelNumarPacientiSub18 = new System.Windows.Forms.Label();
             this.labelNumarPacientiPeste18 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNrPacientiSub18 = new System.Windows.Forms.Label();
             this.labelNrPacientiPeste18 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLine1)).BeginInit();
@@ -113,8 +113,9 @@
             // stergereToolStripMenuItem
             // 
             this.stergereToolStripMenuItem.Name = "stergereToolStripMenuItem";
-            this.stergereToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.stergereToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.stergereToolStripMenuItem.Text = "Stergere";
+            this.stergereToolStripMenuItem.Click += new System.EventHandler(this.stergereToolStripMenuItem_Click);
             // 
             // actualizareToolStripMenuItem
             // 
@@ -459,16 +460,16 @@
             this.labelNumarPacientiPeste18.TabIndex = 27;
             this.labelNumarPacientiPeste18.Text = "Nr. pacienti majori:";
             // 
-            // label1
+            // labelNrPacientiSub18
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(436, 578);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 25);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "99";
+            this.labelNrPacientiSub18.AutoSize = true;
+            this.labelNrPacientiSub18.BackColor = System.Drawing.Color.Transparent;
+            this.labelNrPacientiSub18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNrPacientiSub18.Location = new System.Drawing.Point(436, 578);
+            this.labelNrPacientiSub18.Name = "labelNrPacientiSub18";
+            this.labelNrPacientiSub18.Size = new System.Drawing.Size(36, 25);
+            this.labelNrPacientiSub18.TabIndex = 28;
+            this.labelNrPacientiSub18.Text = "99";
             // 
             // labelNrPacientiPeste18
             // 
@@ -487,7 +488,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1339, 650);
             this.Controls.Add(this.labelNrPacientiPeste18);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNrPacientiSub18);
             this.Controls.Add(this.labelNumarPacientiPeste18);
             this.Controls.Add(this.labelNumarPacientiSub18);
             this.Controls.Add(this.labelNrPacienti);
@@ -572,7 +573,7 @@
         private System.Windows.Forms.Label labelNrPacienti;
         private System.Windows.Forms.Label labelNumarPacientiSub18;
         private System.Windows.Forms.Label labelNumarPacientiPeste18;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNrPacientiSub18;
         private System.Windows.Forms.Label labelNrPacientiPeste18;
     }
 }

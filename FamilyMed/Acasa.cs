@@ -17,7 +17,12 @@ namespace FamilyMed
 {
     public partial class Acasa : Form
     {
-        AdaugarePacient adaugarePacient = new AdaugarePacient();
+        AdaugarePacient adaugarePacient;
+        StergerePacient stergerePacient;
+
+        public static string nrPacientiTotal;
+        public static string nrPacientiAdulti;
+        public static string nrPacientiMinori;
 
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -37,17 +42,31 @@ namespace FamilyMed
             labelData.Text = DateTime.Now.ToLongDateString();
             client = new FireSharp.FirebaseClient(config);
 
-            //TODO: afiseaza aici numarul pacientilor
-
+            extractNumarPacienti();
         }
 
-        private async void countPatients()
+        private async void extractNumarPacienti()
         {
-            FirebaseResponse response = await client.GetTaskAsync("Pacienti");
+            FirebaseResponse response = await client.GetTaskAsync("NumarPacienti");
+            NumarPacienti nrPac = response.ResultAs<NumarPacienti>();
+
+            nrPacientiTotal = nrPac.NumarTotal;
+            nrPacientiAdulti = nrPac.NumarMinori;
+            nrPacientiMinori = nrPac.NumarAdulti;
+
+            //labelNrPacienti.Text = nrPac.NumarTotal;
+            //labelNrPacientiSub18.Text = nrPac.NumarMinori;
+            //labelNrPacientiPeste18.Text = nrPac.NumarAdulti;
+
+            labelNrPacienti.Text = nrPacientiTotal;
+            labelNrPacientiSub18.Text = nrPacientiMinori;
+            labelNrPacientiPeste18.Text = nrPacientiAdulti;
+
         }
 
         private void adugareToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            adaugarePacient = new AdaugarePacient();
             adaugarePacient.Show();
         }
 
@@ -65,6 +84,12 @@ namespace FamilyMed
             {
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
+        }
+
+        private void stergereToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stergerePacient = new StergerePacient();
+            stergerePacient.Show();
         }
     }
 }

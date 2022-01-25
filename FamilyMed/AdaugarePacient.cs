@@ -12,6 +12,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.Drawing.Drawing2D;
+using System.Text.RegularExpressions;
 
 namespace FamilyMed
 {
@@ -29,6 +30,10 @@ namespace FamilyMed
         };
 
         IFirebaseClient client;
+        private object numar;
+        private string nrPacientiMinori = Acasa.nrPacientiMinori;
+        private string nrPacientiTotal = Acasa.nrPacientiTotal;
+        private string nrPacientiAdulti = Acasa.nrPacientiAdulti;
 
         public AdaugarePacient()
         {
@@ -37,6 +42,7 @@ namespace FamilyMed
 
         private async void buttonInainte_Click(object sender, EventArgs e)
         {
+
             if (checkFields())
             {
                 var data = new Data
@@ -55,19 +61,29 @@ namespace FamilyMed
                     Boli = textBoxBoli.Text
                 };
 
-                //TODO de aici 
-                if(CompareDates() < 18)
+                if(CompareDates() < 6575)
                 {
-
+                    numar = new NumarPacienti
+                    {
+                        NumarTotal = (Int32.Parse(nrPacientiTotal) + 1).ToString(),
+                        NumarAdulti = nrPacientiAdulti,
+                        NumarMinori = (Int32.Parse(nrPacientiMinori) + 1).ToString()
+                    };
                 }
                 else
                 {
-
+                    numar = new NumarPacienti
+                    {
+                        NumarTotal = (Int32.Parse(nrPacientiTotal) + 1).ToString(),
+                        NumarAdulti = (Int32.Parse(nrPacientiAdulti) + 1).ToString(),
+                        NumarMinori = nrPacientiMinori
+                    };
                 }
 
-               // SetResponse responseCounter = await client.SetTaskAsync("NumarulPacientilor/" + , data);
+                FirebaseResponse responseNr = await client.UpdateTaskAsync("NumarPacienti", numar);
+                NumarPacienti resultNr = responseNr.ResultAs<NumarPacienti>();
 
-                //TODO: pana aici numarul pacientilor
+                
 
                 SetResponse response = await client.SetTaskAsync("Pacienti/"+textBoxCNP.Text,data);
                 Data result = response.ResultAs<Data>();
@@ -75,19 +91,32 @@ namespace FamilyMed
                 MessageBox.Show("Pacient salvat in baza de date!");
 
                 deleteFields();  
+                extractNumarPacienti();
             }
         }
 
-        //TODO de terminat aici cu numarul pacientilor
+        private async void extractNumarPacienti()
+        {
+            FirebaseResponse response = await client.GetTaskAsync("NumarPacienti");
+            NumarPacienti nrPac = response.ResultAs<NumarPacienti>();
+
+            nrPacientiTotal = nrPac.NumarTotal;
+            nrPacientiMinori = nrPac.NumarMinori;
+            nrPacientiAdulti = nrPac.NumarAdulti;
+
+            Acasa.nrPacientiMinori = nrPac.NumarMinori;
+            Acasa.nrPacientiTotal = nrPac.NumarTotal;
+            Acasa.nrPacientiAdulti = nrPac.NumarAdulti;
+        }
+
         private int CompareDates()
         {
             DateTime dataNasteriiPacient = dateTimePickerData.Value.Date;
             DateTime todaysDate = DateTime.Today;
 
-            int res = DateTime.Compare(dataNasteriiPacient, todaysDate);
+            double res = (todaysDate - dataNasteriiPacient).TotalDays;
 
-            return res;
-            MessageBox.Show(res.ToString());
+            return (int)res;
         }
 
         private void deleteFields()
@@ -110,12 +139,9 @@ namespace FamilyMed
         {
             client = new FireSharp.FirebaseClient(config);
 
-            //test connection with firebase
-            //if (client != null)
-            //{
-            //    MessageBox.Show("Connection is established!");
-            //}
+            extractNumarPacienti();
         }
+
         private bool checkFields()
         {
             //nume check
@@ -139,7 +165,7 @@ namespace FamilyMed
             }
 
             //CNP check
-            if (textBoxCNP.Text.Length != 13)
+            if (textBoxCNP.Text.Length != 13 || !Regex.Match(textBoxCNP.Text, "^[0-9]").Success)
             {
                 pictureBoxCNP.Visible = true;
             }
@@ -159,7 +185,7 @@ namespace FamilyMed
             }
 
             //telefon check
-            if (textBoxTelefon.Text.Length != 10)
+            if (textBoxTelefon.Text.Length != 10 || !Regex.Match(textBoxTelefon.Text, "^[0-9]").Success)
             {
                 pictureBoxTelefon.Visible = true;
             }
@@ -222,14 +248,14 @@ namespace FamilyMed
             }
 
             //check all
-            if(!(pictureBoxNume.Visible && textBoxPrenume.Visible && pictureBoxCNP.Visible && pictureBoxAdresa.Visible && pictureBoxTelefon.Visible
-                && pictureBoxSex.Visible && pictureBoxDataNasterii.Visible && pictureBoxInaltime.Visible && pictureBoxGreutate.Visible))
+            if(pictureBoxNume.Visible || pictureBoxPrenume.Visible || pictureBoxCNP.Visible || pictureBoxAdresa.Visible || pictureBoxTelefon.Visible
+                || pictureBoxSex.Visible || pictureBoxDataNasterii.Visible || pictureBoxInaltime.Visible || pictureBoxGreutate.Visible)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
