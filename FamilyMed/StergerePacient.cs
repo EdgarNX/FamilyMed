@@ -20,6 +20,8 @@ namespace FamilyMed
         private string nrPacientiMinori = Acasa.nrPacientiMinori;
         private string nrPacientiTotal = Acasa.nrPacientiTotal;
         private string nrPacientiAdulti = Acasa.nrPacientiAdulti;
+        private String dataNasterii;
+        private object numar;
 
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -33,17 +35,80 @@ namespace FamilyMed
             InitializeComponent();
         }
 
-        private async void buttonInainte_Click(object sender, EventArgs e)
+        private void buttonInainte_Click(object sender, EventArgs e)
         {
             if (checkFields())
             {
-                FirebaseResponse response = await client.DeleteTaskAsync("Pacienti/" + textBoxCNP.Text);
-
-                MessageBox.Show("Pacient sters din baza de date!");
-
-                extractNumarPacienti();
-                deleteFields();
+                IsThereAPatient();
             }
+        }
+        private async void IsThereAPatient()
+        {
+            FirebaseResponse response = await client.GetTaskAsync("Pacienti/"+textBoxCNP.Text);
+
+            //MessageBox.Show("1" + response.Body);
+            //MessageBox.Show("11" + response.GetType());
+            //MessageBox.Show("111" + response.Body.GetType());
+            //MessageBox.Show("2" + response.ToString());
+            //MessageBox.Show("3" + response.Body.ToString());
+
+
+            if (response.Body != "null")
+            {
+                Data obj = response.ResultAs<Data>();
+
+                if (obj.CNP == textBoxCNP.Text)
+                {
+                    dataNasterii = obj.DataNasterii;
+                    deletePatient();
+                }
+                else
+                {
+                    MessageBox.Show("Pacientul nu exista in baza de date!");
+                }
+            }
+        }
+
+        private async void deletePatient()
+        {
+            if (CompareDates() < 6575)
+            {
+                numar = new NumarPacienti
+                {
+                    NumarTotal = (Int32.Parse(nrPacientiTotal) - 1).ToString(),
+                    NumarAdulti = nrPacientiAdulti,
+                    NumarMinori = (Int32.Parse(nrPacientiMinori) - 1).ToString()
+                };
+            }
+            else
+            {
+                numar = new NumarPacienti
+                {
+                    NumarTotal = (Int32.Parse(nrPacientiTotal) - 1).ToString(),
+                    NumarAdulti = (Int32.Parse(nrPacientiAdulti) - 1).ToString(),
+                    NumarMinori = nrPacientiMinori
+                };
+            }
+
+            FirebaseResponse responseNr = await client.UpdateTaskAsync("NumarPacienti", numar);
+            NumarPacienti resultNr = responseNr.ResultAs<NumarPacienti>();
+
+            FirebaseResponse response = await client.DeleteTaskAsync("Pacienti/" + textBoxCNP.Text);
+
+            MessageBox.Show("Pacient sters din baza de date!");
+
+            extractNumarPacienti();
+            deleteFields();
+        }
+
+        private int CompareDates()
+        {
+            DateTime dataNasteriiPacient = DateTime.Parse(dataNasterii);
+            DateTime todaysDate = DateTime.Today;
+
+            double res = (todaysDate - dataNasteriiPacient).TotalDays;
+
+            return (int)res;
         }
 
         private void deleteFields()
@@ -81,11 +146,6 @@ namespace FamilyMed
             }
         }
 
-        private void textBoxCNP_MouseHover(object sender, EventArgs e)
-        {
-            toolTipGeneral.Show("CNP-ul pacientului trebuie sa contina 13 caractere!", pictureBoxCNP);
-        }
-
         private void StergerePacient_Paint(object sender, PaintEventArgs e)
         {
             using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
@@ -109,6 +169,11 @@ namespace FamilyMed
             Acasa.nrPacientiMinori = nrPac.NumarMinori;
             Acasa.nrPacientiTotal = nrPac.NumarTotal;
             Acasa.nrPacientiAdulti = nrPac.NumarAdulti;
+        }
+
+        private void pictureBoxCNP_MouseHover(object sender, EventArgs e)
+        {
+            toolTipGeneral.Show("CNP-ul pacientului trebuie sa contina 13 caractere!", pictureBoxCNP);
         }
     }
 }

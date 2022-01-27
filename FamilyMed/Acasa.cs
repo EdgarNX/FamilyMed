@@ -19,6 +19,8 @@ namespace FamilyMed
     {
         AdaugarePacient adaugarePacient;
         StergerePacient stergerePacient;
+        CautarePacient cautarePacient;
+        Ajutor ajutor;
 
         public static string nrPacientiTotal;
         public static string nrPacientiAdulti;
@@ -90,6 +92,18 @@ namespace FamilyMed
         {
             stergerePacient = new StergerePacient();
             stergerePacient.Show();
+        }
+
+        private void cautareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cautarePacient = new CautarePacient();
+            cautarePacient.Show();
+        }
+
+        private void ajutorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ajutor = new Ajutor();
+            ajutor.Show();
         }
     }
 }

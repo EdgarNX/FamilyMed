@@ -38,8 +38,20 @@
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cautareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adaugareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stergereToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizareToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.calendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adaugareToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.stergereToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizareToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cautareToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.calandarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adaugereEvenimenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stergereEveniemnteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vizualizareCalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajutorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelTimp = new System.Windows.Forms.Label();
             this.labelData = new System.Windows.Forms.Label();
@@ -106,58 +118,147 @@
             // adugareToolStripMenuItem
             // 
             this.adugareToolStripMenuItem.Name = "adugareToolStripMenuItem";
-            this.adugareToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.adugareToolStripMenuItem.Text = "Adugare";
+            this.adugareToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.adugareToolStripMenuItem.Text = "Adugare Pacienti";
             this.adugareToolStripMenuItem.Click += new System.EventHandler(this.adugareToolStripMenuItem_Click);
             // 
             // stergereToolStripMenuItem
             // 
             this.stergereToolStripMenuItem.Name = "stergereToolStripMenuItem";
-            this.stergereToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.stergereToolStripMenuItem.Text = "Stergere";
+            this.stergereToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.stergereToolStripMenuItem.Text = "Stergere Pacienti";
             this.stergereToolStripMenuItem.Click += new System.EventHandler(this.stergereToolStripMenuItem_Click);
             // 
             // actualizareToolStripMenuItem
             // 
             this.actualizareToolStripMenuItem.Name = "actualizareToolStripMenuItem";
-            this.actualizareToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.actualizareToolStripMenuItem.Text = "Actualizare";
+            this.actualizareToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.actualizareToolStripMenuItem.Text = "Actualizare Pacienti";
             // 
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.listaToolStripMenuItem.Text = "Lista";
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.listaToolStripMenuItem.Text = "Lista Pacienti";
             // 
             // cautareToolStripMenuItem
             // 
             this.cautareToolStripMenuItem.Name = "cautareToolStripMenuItem";
-            this.cautareToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.cautareToolStripMenuItem.Text = "Cautare";
+            this.cautareToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.cautareToolStripMenuItem.Text = "Cautare Pacienti";
+            this.cautareToolStripMenuItem.Click += new System.EventHandler(this.cautareToolStripMenuItem_Click);
             // 
             // boliToolStripMenuItem
             // 
+            this.boliToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adaugareToolStripMenuItem,
+            this.stergereToolStripMenuItem1,
+            this.actualizareToolStripMenuItem1,
+            this.listaToolStripMenuItem1});
             this.boliToolStripMenuItem.Name = "boliToolStripMenuItem";
             this.boliToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.boliToolStripMenuItem.Text = "Boli";
             // 
+            // adaugareToolStripMenuItem
+            // 
+            this.adaugareToolStripMenuItem.Name = "adaugareToolStripMenuItem";
+            this.adaugareToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.adaugareToolStripMenuItem.Text = "Adaugare Boli";
+            // 
+            // stergereToolStripMenuItem1
+            // 
+            this.stergereToolStripMenuItem1.Name = "stergereToolStripMenuItem1";
+            this.stergereToolStripMenuItem1.Size = new System.Drawing.Size(188, 26);
+            this.stergereToolStripMenuItem1.Text = "Stergere Boli";
+            // 
+            // actualizareToolStripMenuItem1
+            // 
+            this.actualizareToolStripMenuItem1.Name = "actualizareToolStripMenuItem1";
+            this.actualizareToolStripMenuItem1.Size = new System.Drawing.Size(188, 26);
+            this.actualizareToolStripMenuItem1.Text = "Actualizare Boli";
+            // 
+            // listaToolStripMenuItem1
+            // 
+            this.listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
+            this.listaToolStripMenuItem1.Size = new System.Drawing.Size(188, 26);
+            this.listaToolStripMenuItem1.Text = "Cautare Boli";
+            // 
             // calendarToolStripMenuItem
             // 
+            this.calendarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adaugareToolStripMenuItem1,
+            this.stergereToolStripMenuItem2,
+            this.actualizareToolStripMenuItem2,
+            this.listaToolStripMenuItem2,
+            this.cautareToolStripMenuItem1});
             this.calendarToolStripMenuItem.Name = "calendarToolStripMenuItem";
             this.calendarToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.calendarToolStripMenuItem.Text = "Tratamente";
             // 
+            // adaugareToolStripMenuItem1
+            // 
+            this.adaugareToolStripMenuItem1.Name = "adaugareToolStripMenuItem1";
+            this.adaugareToolStripMenuItem1.Size = new System.Drawing.Size(228, 26);
+            this.adaugareToolStripMenuItem1.Text = "Adaugare Tratamente";
+            // 
+            // stergereToolStripMenuItem2
+            // 
+            this.stergereToolStripMenuItem2.Name = "stergereToolStripMenuItem2";
+            this.stergereToolStripMenuItem2.Size = new System.Drawing.Size(237, 26);
+            this.stergereToolStripMenuItem2.Text = "Stergere Tratamente";
+            // 
+            // actualizareToolStripMenuItem2
+            // 
+            this.actualizareToolStripMenuItem2.Name = "actualizareToolStripMenuItem2";
+            this.actualizareToolStripMenuItem2.Size = new System.Drawing.Size(237, 26);
+            this.actualizareToolStripMenuItem2.Text = "Actualizare Tratamente";
+            // 
+            // listaToolStripMenuItem2
+            // 
+            this.listaToolStripMenuItem2.Name = "listaToolStripMenuItem2";
+            this.listaToolStripMenuItem2.Size = new System.Drawing.Size(237, 26);
+            this.listaToolStripMenuItem2.Text = "Lista Tratamente";
+            // 
+            // cautareToolStripMenuItem1
+            // 
+            this.cautareToolStripMenuItem1.Name = "cautareToolStripMenuItem1";
+            this.cautareToolStripMenuItem1.Size = new System.Drawing.Size(237, 26);
+            this.cautareToolStripMenuItem1.Text = "Cautare Tratamente";
+            // 
             // calandarToolStripMenuItem
             // 
+            this.calandarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adaugereEvenimenteToolStripMenuItem,
+            this.stergereEveniemnteToolStripMenuItem,
+            this.vizualizareCalendarToolStripMenuItem});
             this.calandarToolStripMenuItem.Name = "calandarToolStripMenuItem";
             this.calandarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.calandarToolStripMenuItem.Text = "Calandar";
+            // 
+            // adaugereEvenimenteToolStripMenuItem
+            // 
+            this.adaugereEvenimenteToolStripMenuItem.Name = "adaugereEvenimenteToolStripMenuItem";
+            this.adaugereEvenimenteToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.adaugereEvenimenteToolStripMenuItem.Text = "Adaugere Evenimente";
+            // 
+            // stergereEveniemnteToolStripMenuItem
+            // 
+            this.stergereEveniemnteToolStripMenuItem.Name = "stergereEveniemnteToolStripMenuItem";
+            this.stergereEveniemnteToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.stergereEveniemnteToolStripMenuItem.Text = "Stergere Eveniemnte";
+            // 
+            // vizualizareCalendarToolStripMenuItem
+            // 
+            this.vizualizareCalendarToolStripMenuItem.Name = "vizualizareCalendarToolStripMenuItem";
+            this.vizualizareCalendarToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.vizualizareCalendarToolStripMenuItem.Text = "Vizualizare Calendar";
             // 
             // ajutorToolStripMenuItem
             // 
             this.ajutorToolStripMenuItem.Name = "ajutorToolStripMenuItem";
             this.ajutorToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.ajutorToolStripMenuItem.Text = "Ajutor";
+            this.ajutorToolStripMenuItem.Click += new System.EventHandler(this.ajutorToolStripMenuItem_Click);
             // 
             // labelTimp
             // 
@@ -200,7 +301,7 @@
             // 
             this.labelDetaliiDoctor.AutoSize = true;
             this.labelDetaliiDoctor.BackColor = System.Drawing.Color.Transparent;
-            this.labelDetaliiDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetaliiDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDetaliiDoctor.Location = new System.Drawing.Point(92, 70);
             this.labelDetaliiDoctor.Name = "labelDetaliiDoctor";
             this.labelDetaliiDoctor.Size = new System.Drawing.Size(266, 29);
@@ -321,7 +422,7 @@
             // 
             this.labelCabinetMedical.AutoSize = true;
             this.labelCabinetMedical.BackColor = System.Drawing.Color.Transparent;
-            this.labelCabinetMedical.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCabinetMedical.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCabinetMedical.Location = new System.Drawing.Point(837, 70);
             this.labelCabinetMedical.Name = "labelCabinetMedical";
             this.labelCabinetMedical.Size = new System.Drawing.Size(296, 29);
@@ -355,11 +456,11 @@
             this.labelCoordonateGPS.AutoSize = true;
             this.labelCoordonateGPS.BackColor = System.Drawing.Color.Transparent;
             this.labelCoordonateGPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCoordonateGPS.Location = new System.Drawing.Point(624, 307);
+            this.labelCoordonateGPS.Location = new System.Drawing.Point(606, 307);
             this.labelCoordonateGPS.Name = "labelCoordonateGPS";
-            this.labelCoordonateGPS.Size = new System.Drawing.Size(183, 25);
+            this.labelCoordonateGPS.Size = new System.Drawing.Size(201, 25);
             this.labelCoordonateGPS.TabIndex = 18;
-            this.labelCoordonateGPS.Text = "Coordonate GPS:";
+            this.labelCoordonateGPS.Text = "Coordonate Online:";
             // 
             // labelNumeOras
             // 
@@ -409,7 +510,7 @@
             // 
             this.labelPacienti.AutoSize = true;
             this.labelPacienti.BackColor = System.Drawing.Color.Transparent;
-            this.labelPacienti.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPacienti.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPacienti.Location = new System.Drawing.Point(483, 430);
             this.labelPacienti.Name = "labelPacienti";
             this.labelPacienti.Size = new System.Drawing.Size(287, 29);
@@ -421,7 +522,7 @@
             this.labelNumarPacienti.AutoSize = true;
             this.labelNumarPacienti.BackColor = System.Drawing.Color.Transparent;
             this.labelNumarPacienti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumarPacienti.Location = new System.Drawing.Point(437, 491);
+            this.labelNumarPacienti.Location = new System.Drawing.Point(179, 520);
             this.labelNumarPacienti.Name = "labelNumarPacienti";
             this.labelNumarPacienti.Size = new System.Drawing.Size(128, 25);
             this.labelNumarPacienti.TabIndex = 24;
@@ -432,7 +533,7 @@
             this.labelNrPacienti.AutoSize = true;
             this.labelNrPacienti.BackColor = System.Drawing.Color.Transparent;
             this.labelNrPacienti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNrPacienti.Location = new System.Drawing.Point(607, 491);
+            this.labelNrPacienti.Location = new System.Drawing.Point(350, 520);
             this.labelNrPacienti.Name = "labelNrPacienti";
             this.labelNrPacienti.Size = new System.Drawing.Size(36, 25);
             this.labelNrPacienti.TabIndex = 25;
@@ -443,7 +544,7 @@
             this.labelNumarPacientiSub18.AutoSize = true;
             this.labelNumarPacientiSub18.BackColor = System.Drawing.Color.Transparent;
             this.labelNumarPacientiSub18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumarPacientiSub18.Location = new System.Drawing.Point(202, 578);
+            this.labelNumarPacientiSub18.Location = new System.Drawing.Point(507, 520);
             this.labelNumarPacientiSub18.Name = "labelNumarPacientiSub18";
             this.labelNumarPacientiSub18.Size = new System.Drawing.Size(192, 25);
             this.labelNumarPacientiSub18.TabIndex = 26;
@@ -454,7 +555,7 @@
             this.labelNumarPacientiPeste18.AutoSize = true;
             this.labelNumarPacientiPeste18.BackColor = System.Drawing.Color.Transparent;
             this.labelNumarPacientiPeste18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumarPacientiPeste18.Location = new System.Drawing.Point(671, 578);
+            this.labelNumarPacientiPeste18.Location = new System.Drawing.Point(893, 520);
             this.labelNumarPacientiPeste18.Name = "labelNumarPacientiPeste18";
             this.labelNumarPacientiPeste18.Size = new System.Drawing.Size(192, 25);
             this.labelNumarPacientiPeste18.TabIndex = 27;
@@ -465,7 +566,7 @@
             this.labelNrPacientiSub18.AutoSize = true;
             this.labelNrPacientiSub18.BackColor = System.Drawing.Color.Transparent;
             this.labelNrPacientiSub18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNrPacientiSub18.Location = new System.Drawing.Point(436, 578);
+            this.labelNrPacientiSub18.Location = new System.Drawing.Point(739, 520);
             this.labelNrPacientiSub18.Name = "labelNrPacientiSub18";
             this.labelNrPacientiSub18.Size = new System.Drawing.Size(36, 25);
             this.labelNrPacientiSub18.TabIndex = 28;
@@ -476,7 +577,7 @@
             this.labelNrPacientiPeste18.AutoSize = true;
             this.labelNrPacientiPeste18.BackColor = System.Drawing.Color.Transparent;
             this.labelNrPacientiPeste18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNrPacientiPeste18.Location = new System.Drawing.Point(898, 578);
+            this.labelNrPacientiPeste18.Location = new System.Drawing.Point(1127, 520);
             this.labelNrPacientiPeste18.Name = "labelNrPacientiPeste18";
             this.labelNrPacientiPeste18.Size = new System.Drawing.Size(36, 25);
             this.labelNrPacientiPeste18.TabIndex = 29;
@@ -575,6 +676,18 @@
         private System.Windows.Forms.Label labelNumarPacientiPeste18;
         private System.Windows.Forms.Label labelNrPacientiSub18;
         private System.Windows.Forms.Label labelNrPacientiPeste18;
+        private System.Windows.Forms.ToolStripMenuItem adaugareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stergereToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem actualizareToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem adaugareToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem stergereToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem actualizareToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem cautareToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem adaugereEvenimenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stergereEveniemnteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vizualizareCalendarToolStripMenuItem;
     }
 }
 

@@ -16,3 +16,5 @@ C:\Users\xp_ed\Documents\Visual Studio 2015\Projects\FamilyMed\FamilyMed\obj\Deb
 C:\Users\xp_ed\Documents\Visual Studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.Acasa.resources
 C:\Users\xp_ed\Documents\Visual Studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.AdaugarePacient.resources
 C:\Users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.StergerePacient.resources
+C:\Users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.CautarePacient.resources
+C:\Users\xp_ed\documents\visual studio 2015\Projects\FamilyMed\FamilyMed\obj\Debug\FamilyMed.Ajutor.resources

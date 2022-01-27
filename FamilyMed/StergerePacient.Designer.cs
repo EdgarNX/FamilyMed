@@ -51,6 +51,7 @@
             this.pictureBoxCNP.TabIndex = 40;
             this.pictureBoxCNP.TabStop = false;
             this.pictureBoxCNP.Visible = false;
+            this.pictureBoxCNP.MouseHover += new System.EventHandler(this.pictureBoxCNP_MouseHover);
             // 
             // buttonInainte
             // 
@@ -71,7 +72,6 @@
             this.textBoxCNP.Name = "textBoxCNP";
             this.textBoxCNP.Size = new System.Drawing.Size(233, 34);
             this.textBoxCNP.TabIndex = 38;
-            this.textBoxCNP.MouseHover += new System.EventHandler(this.textBoxCNP_MouseHover);
             // 
             // labelCNP
             // 
